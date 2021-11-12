@@ -1,0 +1,4 @@
+Web3 = "Its a library para conectarse con wallets"
+OppenZeppelin = "Its a js library for work on standars of smartcontrats"
+Hathat = "Its a library for test smart Contrats of Etherium"
+NextJS ="Its a framework for work on serverless of javascript"
