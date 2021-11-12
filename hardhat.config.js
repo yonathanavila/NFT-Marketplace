@@ -1,6 +1,6 @@
 require("@nomiclabs/hardhat-waffle");
 
-const fs= require("fs")
+const fs = require("fs")
 const privateKey = fs.readFileSync(".secret").toString()
 const projectId = "b67e1f70a3614b64842d9e4c1dd7e5ab"
 
