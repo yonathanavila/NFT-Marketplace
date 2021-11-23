@@ -17,7 +17,7 @@ export default function Home() {
   }, []);
 
   async function loadNFTs() {
-    const provider = new ethers.providers.JsonRpcProvider();
+    const provider = new ethers.providers.JsonRpcProvider("https://matic-mumbai.chainstacklabs.com");
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider);
     const marketContract = new ethers.Contract(
       nftmarketaddress,
@@ -33,7 +33,7 @@ export default function Home() {
         let price = ethers.utils.formatUnits(i.price.toString(), "ether");
         let item = {
           price,
-          tokenId: i.tokenId.toNumber(),
+          itemId: i.itemId.toNumber(),
           seller: i.seller,
           owner: i.owner,
           image: meta.data.image,
@@ -56,7 +56,7 @@ export default function Home() {
     const price = ethers.utils.parseUnits(nft.price.toString(), "ether");
     const transaction = await contract.createMarketSale(
       nftaddress,
-      nft.tokenId,
+      nft.itemId,
       {
         value: price,
       }
